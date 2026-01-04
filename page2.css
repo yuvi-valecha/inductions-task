@@ -8,7 +8,7 @@
 body{
     background: radial-gradient(circle at top right, #f422eacf, transparent 40%), radial-gradient(circle at center, #2e1065 0%, #000000 100%);
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     overflow: visible;
     background-repeat: no-repeat;
     background-attachment: fixed;
