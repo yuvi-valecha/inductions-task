@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top right, #f422eacf, transparent 40%), radial-gradient(circle at center, #2e1065 0%, #000000 100%);
+    color: white;
+    height: 100vh;
+    overflow: visible;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 50px;
+    background-color: black;
+}
+.mobile-menu-btn{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+}
+
+.navlinks a{
+    display: inline-block;
+    color: #b1abab;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 25px;
+    transition: transform 0.2s;
+}
+
+.navlinks a:hover{
+    color: white;
+    transform: scale(1.1);
+}
+
+.divider{
+    margin-left: 25px;
+    color: #413f3f;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    gap: 20px;
+}
+
+.logo{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.spotify-logo{
+    width: 550px;
+}
+
+.button{
+    background: transparent;
+    color: white;
+    border: 2px solid #1ed760;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #1ed76099;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #1ed76099;
+}
+
+.img-grid{
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+}
+
+.img{
+    height: 400px;
+    width: 200px;
+    aspect-ratio: 9/16;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.img:hover{
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px){
+    .navbar{
+        display: none;
+    }
+    .img-grid{
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    .spotify-logo{
+    width: 350px;
+    }
+    .container{
+        padding: 20px;
+    }
+    .img{
+    height: 300px;
+    width: 150px;
+    aspect-ratio: 9/16;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    }
+}

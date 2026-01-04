@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Artist</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+    <!-- Header Part -->
+    <header>
+        <nav class="navbar">
+            <div class="mobile-menu-btn">&#9776
+            </div>
+            <div class="navlinks">
+                <a href="https://www.spotify.com/in-en/premium/">Premium</a>
+                <a href="https://support.spotify.com/in-en/">Support</a>
+                <a href="https://www.spotify.com/in-en/download/windows/">Download</a>
+                <span class="divider">|</span>
+                <a href="https://accounts.spotify.com/en/login?continue=https%3A%2F%2Fwww.spotify.com%2Fin-en%2Fpremium%2F&_locale=en-IN">Log In</a>
+                <a href="https://www.spotify.com/in-en/signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div>
+            <img src="assets/images/Screenshot_20251227_140047.jpg" alt="image" class="img">
+        </div>
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div>
+            <a href="page7.html">
+            <button class="button">
+                BACK
+            </button>
+            </a>
+            <a href="page9.html">
+            <button class="button">
+                NEXT
+            </button>
+            </a>
+        </div>
+    </main>
+    <audio id="backgroundMusic"  autoplay loop >
+        <source src="assets/audio/raabta2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="muteToggle" aria-label="Toggle Mute">
+    🔊
+    </button>
+
+    <script>
+    // Get the elements from the HTML
+    const audio = document.getElementById('backgroundMusic');
+    const toggleButton = document.getElementById('muteToggle');
+
+    // Set the initial state for the music (must be unmuted to be played by script)
+    // This is where we manually tell the browser to try and play it.
+    audio.play().catch(error => {
+        console.log("Autoplay was prevented, waiting for user interaction.");
+        // Even if autoplay is blocked, the user can still click the button.
+    });
+
+    // Function to handle the mute/unmute action
+    function toggleMute() {
+        // 1. Toggle the muted property
+        audio.muted = !audio.muted;
+
+        // 2. Update the icon based on the new state
+        if (audio.muted) {
+        toggleButton.innerHTML = '🔇'; // Muted icon
+        // If it was playing and we muted it, we keep it playing in the background
+        } else {
+        toggleButton.innerHTML = '🔊'; // Unmuted icon
+        // If the browser blocked autoplay, this click will finally start the music
+        audio.play().catch(error => {
+            // Handle case where .play() is still rejected (very rare after a user click)
+            console.error("Failed to play audio after user click:", error);
+        });
+            }
+    }
+
+        // Attach the function to the button's click event
+        toggleButton.addEventListener('click', toggleMute);
+
+        // Initial icon setup to match the HTML (optional, but good practice)
+        toggleButton.innerHTML = audio.muted ? '🔇' : '🔊';
+
+    </script>
+</body>
+</html>

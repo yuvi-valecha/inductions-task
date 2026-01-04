@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top right, #f422eacf, transparent 40%), radial-gradient(circle at center, #2e1065 0%, #000000 100%);
+    color: white;
+    height: 100vh;
+    overflow: visible;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 50px;
+    background-color: black;
+}
+
+.mobile-menu-btn{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+}
+
+.navlinks a{
+    display: inline-block;
+    color: #b1abab;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 25px;
+    transition: transform 0.2s;
+}
+
+.navlinks a:hover{
+    color: white;
+    transform: scale(1.1);
+}
+
+.divider{
+    margin-left: 25px;
+    color: #413f3f;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.img{
+    height: 550px;
+    width: 400px;
+}
+
+.bars{
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 50px;
+}
+.bar{
+    width: 4px;
+    background: #1ed760;
+    animation: bounce 0.5s ease-in-out infinite alternate;
+}
+.bar:nth-child(2n){
+    animation-delay: 0.1s;
+    height: 30px;
+}
+.bar:nth-child(2n+1){
+    animation-delay: 0.2s;
+    height: 45px;
+}
+
+.button{
+    background: transparent;
+    color: white;
+    border: 2px solid #1ed760;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #1ed76099;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #1ed76099;
+}
+
+
+
+#muteToggle {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: #00000080; 
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; 
+    transition: background 0.3s;
+  }
+  
+  #muteToggle:hover {
+    background: #000000b3;
+  }
+
+@keyframes bounce {
+    from{height: 10px;}
+    to{height: 100%;}
+}
+@media (max-width: 480px){
+    .navbar{
+        padding: 20px;
+    }
+    .navlinks{
+        display: none;
+    }
+    .mobile-menu-btn{
+        display: block;
+    }
+    .img{
+    height: 650px;
+    width: 400px;
+    }
+} 
